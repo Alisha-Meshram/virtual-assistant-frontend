@@ -13,7 +13,7 @@ const UserContext = ({ children }) => {
 
   const handleCurrentUser = async () => {
     try {
-      const result = await axios.get(`${serverUrl}/api/user/current`, {
+      const result = await axios.get(`${serverUrl}/api/v1/user/current`, {
         withCredentials: true,
       });
       setUserData(result.data);
@@ -25,7 +25,7 @@ const UserContext = ({ children }) => {
   const getGeminiResponse = async (command) => {
     try {
       const result = await axios.post(
-        `${serverUrl}/api/user/asktoassistant`,
+        `${serverUrl}/api/v1/user/asktoassistant`,
         { command },
         { withCredentials: true }
       );
